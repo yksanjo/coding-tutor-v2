@@ -1,141 +1,84 @@
-# Git Commit Message Generator
+# coding-tutor-v2
 
-A powerful CLI tool that analyzes your staged git changes and suggests conventional commit messages. Supports both rule-based and AI-powered suggestions.
+## Detailed Description
 
-## Features
+coding-tutor-v2 is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-- **Smart Analysis**: Analyzes staged changes to determine commit type
-- **Conventional Commits**: Follows the [Conventional Commits](https://www.conventionalcommits.org/) specification
-- **AI Support**: Optional AI-powered suggestions using OpenAI or Anthropic
-- **Multiple Suggestions**: Get up to 5 different commit message options
-- **Confidence Scoring**: Shows confidence level for each suggestion
-- **Statistics**: View detailed change statistics
-- **Auto-Apply**: Automatically apply the best suggestion
+## Problem Statement
 
-## Installation
+Describe the user or business problem this project solves, the target users, and expected outcomes.
+
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-# Clone the repository
-git clone https://github.com/yksanjo/coding-tutor-v2.git
-cd coding-tutor-v2
-
-# Make executable
-chmod +x git-commit-gen.py
-
-# Optional: Add to PATH for global use
-ln -s "$(pwd)/git-commit-gen.py" /usr/local/bin/git-commit-gen
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt  # or: pip install -e .[dev]
+pytest
 ```
 
 ## Usage
 
-### Basic Usage
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-```bash
-# Stage your changes
-git add .
+## Quality Standards
 
-# Run the tool
-python git-commit-gen.py
-# or
-./git-commit-gen.py
-```
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-### Command Line Options
+## Security
 
-```bash
-# Show statistics only
-python git-commit-gen.py --stats
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-# Include AI-powered suggestion
-python git-commit-gen.py --ai
+## Contributing
 
-# Automatically apply the best suggestion
-python git-commit-gen.py --apply
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-# Disable colored output
-python git-commit-gen.py --no-color
-```
+## Roadmap
 
-## Examples
+Track upcoming milestones, technical debt, and planned feature work.
 
-### Interactive Mode
+## Support
 
-```
-📋 Suggested Commit Messages:
-
-  1. feat(auth): add user authentication
-     Confidence: 85%
-     Reason: AI-generated based on diff analysis
-
-  2. feat: add new files
-     Confidence: 70%
-     Reason: All new files suggest a new feature
-
-  3. docs: update documentation
-     Confidence: 60%
-     Reason: Changes primarily in docs files
-
-Select option (1-5/c/q): 
-```
-
-### Statistics Mode
-
-```
-Change Statistics:
-  Files: 3 added, 1 modified, 0 deleted
-  Lines: +150 / -23
-  File types: .py(2), .md(1), .json(1)
-```
-
-## Environment Variables
-
-For AI-powered suggestions, set one of:
-
-```bash
-# For OpenAI
-export OPENAI_API_KEY="your-api-key"
-
-# For Anthropic
-export ANTHROPIC_API_KEY="your-api-key"
-```
-
-## How It Works
-
-1. **Analyzes Staged Changes**: Reads git diff of staged files
-2. **Extracts Metadata**: Counts lines added/deleted, identifies file types
-3. **Keyword Analysis**: Scans diff content for relevant keywords
-4. **Classification**: Determines commit type (feat, fix, docs, etc.)
-5. **Suggestion Generation**: Creates conventional commit messages
-
-## Supported Commit Types
-
-| Type | Description |
-|------|-------------|
-| `feat` | A new feature |
-| `fix` | A bug fix |
-| `docs` | Documentation only changes |
-| `style` | Code style changes |
-| `refactor` | Code refactoring |
-| `perf` | Performance improvements |
-| `test` | Adding or correcting tests |
-| `chore` | Build process, dependencies |
-| `ci` | CI/CD configuration changes |
-| `build` | Build system changes |
-| `revert` | Reverting a previous commit |
-
-## Requirements
-
-- Python 3.7+
-- Git
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT License
-
-## Author
-
-[yksanjo](https://github.com/yksanjo)
-
----
-
-**Note**: This tool is part of the coding-tutor-v2 project. For more tools and utilities, check out the main repository.
+This project is released under the MIT License.
