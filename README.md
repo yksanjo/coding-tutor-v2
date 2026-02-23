@@ -1,5 +1,12 @@
 # coding-tutor-v2
 
+Production-grade project scaffold focused on reliability, maintainability, and fast onboarding.
+
+[![CI](https://img.shields.io/github/actions/workflow/status/yksanjo/coding-tutor-v2/ci.yml?branch=main&label=ci)](https://github.com/yksanjo/coding-tutor-v2/actions)
+![License](https://img.shields.io/github/license/yksanjo/coding-tutor-v2)
+![Last Commit](https://img.shields.io/github/last-commit/yksanjo/coding-tutor-v2)
+![Repo Size](https://img.shields.io/github/repo-size/yksanjo/coding-tutor-v2)
+
 ## Detailed Description
 
 coding-tutor-v2 is maintained as an industry-grade software project with production-ready engineering practices.  
